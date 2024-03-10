@@ -1,5 +1,5 @@
 export const achievementData = {
-    bio : "Bunu yazan tosun, okuyana kosun. - Anonim",
+    bio : "Success happens when talent and determination meet.  - Bill Gates",
     achievements : [
         {
             id : 1,

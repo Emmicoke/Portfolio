@@ -16,7 +16,16 @@ export const projectsData = [
         tags: ['OpenCV', 'Python'],
         code: 'https://github.com/Emmicoke/white_line_follower',
         // demo: 'https://historythroughmovies.pythonanywhere.com/',
-        image: "https://github.com/Emmicoke/white_line_follower/blob/main/20220716_142810.jpg"
+        image: "https://github.com/Emmicoke/white_line_follower/blob/main/20220716_142810.jpg?raw=true"
+    },
+    {
+        id: 2,
+        projectName: 'Vet App',
+        projectDesc: 'The Vet Appointment App is a mobile application that allows pet owners to create, manage, and track veterinary appointments for their pets. The app offers a simple interface for users to schedule appointments, view upcoming and past appointments, manage their account, and receive notifications about important pet health events.',
+        tags: ['React', 'React-Native', 'JavaScript'],
+        code: 'https://github.com/Emmicoke/VetApp',
+        // demo: 'https://historythroughmovies.pythonanywhere.com/',
+        image: "https://github.com/Emmicoke/VetApp/blob/master/Screenshot_1715080648.png?raw=true"
     },
     // {
     //     id: 2,

@@ -7,7 +7,7 @@ export const achievementData = {
             details : 'An Artificial Intelligence course from Akbank',
             date : 'Oct 27, 2022',
             field : 'Artificial Intelligence',
-            image : 'https://github.com/Emmicoke/Portfolio/blob/main/YAPAY.png?raw=true'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/YAPAY.png?raw=true'
         },
         {
             id : 2,
@@ -15,7 +15,7 @@ export const achievementData = {
             details : 'A Metaverse course from Akbank',
             date : 'Apr 27, 2022',
             field : 'Artificial Intelligence',
-            image : 'https://github.com/Emmicoke/Portfolio/blob/main/METAVERSE.png?raw=true'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/METAVERSE.png?raw=true'
         },
         {
             id : 3,
@@ -23,7 +23,7 @@ export const achievementData = {
             details : 'API and banking course from Akbank',
             date : 'May 16, 2022',
             field : 'API',
-            image : 'https://github.com/Emmicoke/Portfolio/blob/main/API.png?raw=true'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/src/ImageFile/API.png?raw=true'
         },
         {
             id : 4,
@@ -31,7 +31,7 @@ export const achievementData = {
             details : 'Management style course from Akbank',
             date : 'May 17, 2022',
             field : 'Management',
-            image : 'https://github.com/Emmicoke/Portfolio/blob/main/AGILE.png?raw=true'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/src/ImageFile/AGILE.png?raw=true'
         },
         {
             id : 5,
@@ -39,7 +39,7 @@ export const achievementData = {
             details : 'Mobile Development course from Akbank',
             date : 'May 18, 2022',
             field : 'Development',
-            image : 'https://github.com/Emmicoke/Portfolio/blob/main/MOBILE.png?raw=true'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/MOBILE.png?raw=true'
         },
         {
             id : 6,
@@ -47,7 +47,7 @@ export const achievementData = {
             details : 'Education program of Finance and technology combine',
             date : 'May 18, 2024',
             field : 'Fintech',
-            image : 'https://github.com/Emmicoke/Portfolio/blob/main/Fintech.png?raw=true'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/Fintech.png?raw=true'
         },
         {
             id : 7,
@@ -55,7 +55,7 @@ export const achievementData = {
             details : 'Finalist certificate of Autonomous Vehicle Competition in Teknofest',
             date : 'August 29, 2022',
             field : 'Competition',
-            image : 'https://github.com/Emmicoke/Portfolio/blob/main/Teknofest.png?raw=true'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/Teknofest.png?raw=true'
         },
 
     ]

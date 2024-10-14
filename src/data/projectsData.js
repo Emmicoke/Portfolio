@@ -12,7 +12,7 @@ export const projectsData = [
     {
         id: 1,
         projectName: 'Line detection for Autonomous vehicle',
-        projectDesc: 'This project aims to detect and track white lines. .',
+        projectDesc: 'This project aims to detect and track white lines for Autonomous vehicle.',
         tags: ['OpenCV', 'Python'],
         code: 'https://github.com/Emmicoke/white_line_follower',
         // demo: 'https://historythroughmovies.pythonanywhere.com/',

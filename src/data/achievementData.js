@@ -23,7 +23,7 @@ export const achievementData = {
             details : 'API and banking course from Akbank',
             date : 'May 16, 2022',
             field : 'API',
-            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/src/ImageFile/API.png?raw=true'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/API.png?raw=true'
         },
         {
             id : 4,
@@ -31,7 +31,7 @@ export const achievementData = {
             details : 'Management style course from Akbank',
             date : 'May 17, 2022',
             field : 'Management',
-            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/src/ImageFile/AGILE.png?raw=true'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/src/ImageFile/AGILE.png?raw=true'
         },
         {
             id : 5,

@@ -7,7 +7,7 @@ export const achievementData = {
             details : 'An Artificial Intelligence course from Akbank',
             date : 'Oct 27, 2022',
             field : 'Artificial Intelligence',
-            image : 'https://europa.eu/europass/eportfolio/api/document-repository/documents/3b75d372-5cc1-43c1-be42-f02ab7d27eeb?view=thumbnail&t=t9521'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/YAPAY.png?raw=true'
         },
         {
             id : 2,
@@ -15,7 +15,7 @@ export const achievementData = {
             details : 'A Metaverse course from Akbank',
             date : 'Apr 27, 2022',
             field : 'Artificial Intelligence',
-            image : 'https://europa.eu/europass/eportfolio/api/document-repository/documents/93e01817-f96a-4132-afb3-91f9267fb5cb?view=thumbnail&t=t9679'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/METAVERSE.png?raw=true'
         },
         {
             id : 3,
@@ -23,16 +23,40 @@ export const achievementData = {
             details : 'API and banking course from Akbank',
             date : 'May 16, 2022',
             field : 'API',
-            image : 'https://europa.eu/europass/eportfolio/api/document-repository/documents/f991ae11-4e8e-45f9-9f74-810881feb493?view=thumbnail&t=t3981'
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/API.png?raw=true'
         },
         {
-            id : 3,
+            id : 4,
             title : 'AGILE(ÇEVİK YÖNETİM) 101',
             details : 'Management style course from Akbank',
             date : 'May 17, 2022',
             field : 'Management',
-            image : 'https://europa.eu/europass/eportfolio/api/document-repository/documents/bb7a2161-9f92-48ab-9975-6b82070d31d9?view=thumbnail&t=t8128'
-        }
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/AGILE.png?raw=true'
+        },
+        {
+            id : 5,
+            title : 'MOBİL GELİŞTİRME',
+            details : 'Mobile Development course from Akbank',
+            date : 'May 18, 2022',
+            field : 'Development',
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/MOBILE.png?raw=true'
+        },
+        {
+            id : 6,
+            title : 'FinTech Education Program',
+            details : 'Education program of Finance and technology combine',
+            date : 'May 18, 2024',
+            field : 'Fintech',
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/Fintech.png?raw=true'
+        },
+        {
+            id : 7,
+            title : 'Teknofest Finalist Certificate',
+            details : 'Finalist certificate of Autonomous Vehicle Competition in Teknofest',
+            date : 'August 29, 2022',
+            field : 'Competition',
+            image : 'https://github.com/Emmicoke/Portfolio/blob/main/Teknofest.png?raw=true'
+        },
 
     ]
 }

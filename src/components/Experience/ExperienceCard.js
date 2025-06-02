@@ -32,9 +32,12 @@ function ExperienceCard({id, company, jobtitle, startYear, startMonth, endMonth,
                     <img src={theme.type === 'light' ? expImgBlack : expImgWhite} alt="" />
                 </div>
                 <div className="experience-details">
-                    <h6 style={{color: theme.primary}}>{startMonth}-{startYear}-{endMonth}-{endYear}</h6>
+                    <h6 style={{color: theme.primary}}>{startMonth}/{startYear}-{endMonth}/{endYear}</h6>
                     <h4 style={{color: theme.tertiary}}>{jobtitle}</h4>
                     <h5 style={{color: theme.tertiary80}}>{company}</h5>
+                    <h7 style={{color: theme.primary80}}>This internship was part of the Erasmus+ Internship Mobility Program and took place at South Tours, a tourism and travel 
+                        agency based in Spain. The internship focused on web development and software engineering tasks, specifically contributing to the maintenance, development, 
+                        and enhancement of a web-based tour management system used by the company.</h7>
                 </div>
             </div>
         </Fade>   

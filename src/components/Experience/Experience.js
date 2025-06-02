@@ -24,6 +24,8 @@ function Experience() {
                             id={exp.id}
                             jobtitle={exp.jobtitle}
                             company={exp.company}
+                            startMonth={exp.startMonth}
+                            endMonth={exp.endMonth}
                             startYear={exp.startYear}
                             endYear={exp.endYear}/>
                     ))}

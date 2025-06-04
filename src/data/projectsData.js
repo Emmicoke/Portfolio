@@ -25,7 +25,7 @@ export const projectsData = [
         tags: ['React', 'React-Native', 'JavaScript'],
         code: 'https://github.com/Emmicoke/VetApp',
         // demo: 'https://historythroughmovies.pythonanywhere.com/',
-        image: "https://github.com/Emmicoke/VetApp/blob/master/Screenshot_1715080648.png?raw=true"
+        image: "https://raw.githubusercontent.com/Emmicoke/VetApp/refs/heads/master/Screenshot_1715080648.png"
     },
 
     {
@@ -44,9 +44,9 @@ export const projectsData = [
         tags: ['C++', 'Arduino'],
         code: 'https://github.com/Emmicoke/Weather-Station',
         //demo: 'https://practical-meninsky-36f305.netlify.app/',
-        image: "https://github.com/Emmicoke/Weather-Station/blob/main/20241224_212429.jpg"
+        image: "https://github.com/Emmicoke/Weather-Station/blob/main/20241224_212429.jpg?raw=true"
     },
-    {
+    // {
     //     id: 3,
     //     projectName: 'Educative Clone',
     //     projectDesc: 'This project is the clone of Educative.io. Built as part of Project week, my contributions include the home page(both with user and without user), course information page and checkout page. The rest of the pages and features were built by other members of my team',

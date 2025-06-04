@@ -27,16 +27,26 @@ export const projectsData = [
         // demo: 'https://historythroughmovies.pythonanywhere.com/',
         image: "https://github.com/Emmicoke/VetApp/blob/master/Screenshot_1715080648.png?raw=true"
     },
-    // {
-    //     id: 2,
-    //     projectName: 'Sportsjam.in Clone',
-    //     projectDesc: 'This is a clone of an e-commerce website sportsjam.in. My contribution to this project was the product catalogue page and its features, like sorting and filtering. The rest of the project was built by various members of the group',
-    //     tags: ['HTML', 'CSS','Javascript'],
-    //     code: 'https://github.com/sreerag-rajan/sportsjam-clone',
-    //     demo: 'https://practical-meninsky-36f305.netlify.app/',
-    //     image: "https://camo.githubusercontent.com/f9fbe30b577cff2fbf09af53fb3c1f12fcc10a771bf9459ed5af10bffab9e38b/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f3837352f312a525f5f63646e384c316759474b3154647171797562672e706e67"
-    // },
-    // {
+
+    {
+        id: 3,
+        projectName: 'Lezzet Diyarı',
+        projectDesc: 'The Vet Appointment App is a mobile application that allows pet owners to create, manage, and track veterinary appointments for their pets. The app offers a simple interface for users to schedule appointments, view upcoming and past appointments, manage their account, and receive notifications about important pet health events.',
+        tags: ['React', 'React-Native', 'JavaScript'],
+        code: 'https://github.com/Emmicoke/VetApp',
+        // demo: 'https://historythroughmovies.pythonanywhere.com/',
+        image: "https://github.com/Emmicoke/VetApp/blob/master/Screenshot_1715080648.png?raw=true"
+    },
+    {
+        id: 4,
+        projectName: 'Portable Weather Station',
+        projectDesc: 'This is an Arduino-based Portable Weather Station. It monitors gas levels, air quality, temperature, humidity, and fire detection using various sensors.',
+        tags: ['C++', 'Arduino'],
+        code: 'https://github.com/Emmicoke/Weather-Station',
+        //demo: 'https://practical-meninsky-36f305.netlify.app/',
+        image: "https://github.com/Emmicoke/Weather-Station/blob/main/20241224_212429.jpg"
+    },
+    {
     //     id: 3,
     //     projectName: 'Educative Clone',
     //     projectDesc: 'This project is the clone of Educative.io. Built as part of Project week, my contributions include the home page(both with user and without user), course information page and checkout page. The rest of the pages and features were built by other members of my team',

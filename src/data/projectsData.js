@@ -28,15 +28,15 @@ export const projectsData = [
         image: "https://raw.githubusercontent.com/Emmicoke/VetApp/refs/heads/master/Screenshot_1715080648.png"
     },
 
-    // {
-    //     id: 3,
-    //     projectName: 'Lezzet Diyarı',
-    //     projectDesc: 'The Vet Appointment App is a mobile application that allows pet owners to create, manage, and track veterinary appointments for their pets. The app offers a simple interface for users to schedule appointments, view upcoming and past appointments, manage their account, and receive notifications about important pet health events.',
-    //     tags: ['React', 'React-Native', 'JavaScript'],
-    //     code: 'https://github.com/Emmicoke/VetApp',
-    //     // demo: 'https://historythroughmovies.pythonanywhere.com/',
-    //     image: "https://github.com/Emmicoke/VetApp/blob/master/Screenshot_1715080648.png?raw=true"
-    // },
+    {
+        id: 3,
+        projectName: 'CFK Academy',
+        projectDesc: 'This project is a React-based exam application designed for TYT, AYT, and LGS exams, allowing users to solve questions, track time, and view a detailed analysis on the results screen.',
+        tags: ['React', 'Vite', 'JavaScript', 'Bootstrap'],
+        code: 'https://github.com/Emmicoke/CFK-Academy',
+        // demo: 'https://historythroughmovies.pythonanywhere.com/',
+        image: "https://github.com/Emmicoke/CFK-Academy/blob/main/src/images/Screenshot%202025-08-08%20144618.png?raw=true"
+    },
     {
         id: 4,
         projectName: 'Portable Weather Station',

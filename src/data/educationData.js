@@ -4,7 +4,7 @@ export const educationData = [
         institution: 'Hasan Kalyoncu University',
         course: 'Software Engineering',
         startYear: '2021',
-        endYear: '2025'
+        endYear: '2026'
     },
     {
         id: 2,

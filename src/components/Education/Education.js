@@ -21,6 +21,7 @@ function Education() {
                             key={edu.id}
                             id={edu.id}
                             institution={edu.institution}
+                            degree={edu.degree}
                             course={edu.course}
                             startYear={edu.startYear}
                             endYear={edu.endYear}

@@ -1,68 +1,53 @@
 import React from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
-import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 
 import './Landing.css';
+import EdgePortrait from './EdgePortrait';
+import { usePrefs } from '../../i18n/Preferences';
 import { headerData } from '../../data/headerData';
-import { socialsData } from '../../data/socialsData';
 import { contactsData } from '../../data/contactsData';
 
 function Landing() {
+    const { t, pick, lang } = usePrefs();
+    const header = pick(headerData, ['header']);
+    const words = headerData.name.split(' ');
+    const last = words.pop();
+    const place = contactsData.address.replace('/', ', ');
+    const title = lang === 'tr' ? header.title.toLocaleLowerCase('tr-TR') : header.title;
+
     return (
-        <section className='landing' id='home'>
-            <div className='wrap landing--grid'>
-                <div className='landing--copy'>
-                    <p className='kicker'>{headerData.title}</p>
-                    <h1>
-                        {headerData.name.split(' ').slice(0, 2).join(' ')}
-                        <em> {headerData.name.split(' ').slice(2).join(' ')}</em>
+        <section className="hero" id="home">
+            <div className="wrap hero-grid">
+                <div className="hero-text">
+                    <h1 className="hero-name">
+                        <span>{words.join(' ')}</span> <span>{last}</span>
                     </h1>
-                    <p className='landing--lead'>{headerData.desciption}</p>
 
-                    <div className='landing--actions'>
-                        {headerData.resumePdf && (
-                            <a
-                                href={headerData.resumePdf}
-                                download='resume'
-                                target='_blank'
-                                rel='noreferrer'
-                                className='btn btn-fill'
-                            >
-                                Download CV
-                            </a>
-                        )}
-                        <NavLink to='/#contacts' smooth={true} duration={600} className='btn btn-ghost'>
-                            Contact
-                        </NavLink>
-                    </div>
+                    <div className="hero-intro">
+                        <p className="hero-role">{t('hero.role', { title, place })}</p>
 
-                    <div className='landing--socials'>
-                        {socialsData.linkedIn && (
-                            <a href={socialsData.linkedIn} target='_blank' rel='noreferrer' aria-label='LinkedIn'>
-                                <FaLinkedin />
-                            </a>
-                        )}
-                        {socialsData.github && (
-                            <a href={socialsData.github} target='_blank' rel='noreferrer' aria-label='GitHub'>
-                                <FaGithub />
-                            </a>
-                        )}
-                        {socialsData.instagram && (
-                            <a href={socialsData.instagram} target='_blank' rel='noreferrer' aria-label='Instagram'>
-                                <FaInstagram />
-                            </a>
-                        )}
+                        <blockquote className="hero-quote">{header.desciption}</blockquote>
+
+                        <div className="hero-actions">
+                            {headerData.resumePdf && (
+                                <a
+                                    className="button"
+                                    href={headerData.resumePdf}
+                                    download="KORKUTFahrettinEminCV"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {t('hero.cv')}
+                                </a>
+                            )}
+                            <NavLink className="button button--line" to="/#contacts" smooth>
+                                {t('hero.contact')}
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
 
-                <div className='landing--portrait'>
-                    <div className='landing--frame'>
-                        <img src={headerData.image} alt={headerData.name} />
-                    </div>
-                    <div className='landing--meta'>
-                        <span>{contactsData.address}</span>
-                    </div>
-                </div>
+                <EdgePortrait src={headerData.image} alt={t('hero.photoAlt', { name: headerData.name })} />
             </div>
         </section>
     );

@@ -1,26 +1,24 @@
-.about-body {
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 3rem;
+.about-lead {
+  font-size: clamp(1.45rem, 2.6vw, 2.05rem);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  max-width: 34ch;
 }
 
-.about-intro {
-    font-family: var(--display);
-    font-size: clamp(1.55rem, 2.6vw, 2.15rem);
-    line-height: 1.35;
-    color: var(--ink);
+.about-text {
+  margin-top: 2.5rem;
+  columns: 2 22rem;
+  column-gap: 2.5rem;
+  color: var(--graphite);
 }
 
-.about-copy {
-    display: grid;
-    gap: 1.1rem;
-    color: var(--ink-soft);
-    font-size: 1.02rem;
+.about-text p {
+  break-inside: avoid;
+  margin-bottom: 1.1rem;
+  max-width: 62ch;
 }
 
-@media (max-width: 800px) {
-    .about-body {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+.about-text p:first-child {
+  color: var(--ink);
 }

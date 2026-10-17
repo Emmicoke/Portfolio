@@ -1,64 +1,55 @@
-.projectPage {
-    min-height: 100vh;
-    padding-bottom: 4rem;
+/* Shared by the Projects and Blog pages */
+.subpage-head {
+  padding-top: 2rem;
 }
 
-.projectPage-header {
-    border-bottom: 1px solid var(--line);
-    padding: 2.5rem 0 2rem;
+.subpage-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.projectPage-header-inner {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
+.subpage-title {
+  margin-top: 2.5rem;
+  font-stretch: 62%;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: -0.015em;
 }
 
-.projectPage-header h1 {
-    font-family: var(--display);
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    font-weight: 400;
+.subpage-search {
+  display: block;
+  margin-top: 2rem;
+  max-width: 520px;
 }
 
-.projectPage-home {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0.35rem;
+.subpage-search input {
+  width: 100%;
+  padding: 0.8rem 0;
+  border: 0;
+  border-bottom: 1.5px solid var(--ink);
+  background: transparent;
+  font-size: 1.1rem;
 }
 
-.projectPage-container {
-    padding-top: 2rem;
+.subpage-search input::placeholder {
+  color: var(--graphite);
 }
 
-.projectPage-search input {
-    width: min(100%, 420px);
-    height: 48px;
-    border-radius: 999px;
-    border: 1px solid var(--line);
-    background: var(--bg-raised);
-    color: var(--ink);
-    padding: 0 1.1rem;
-    outline: none;
+.subpage-search input:focus {
+  outline: none;
+  border-bottom-color: var(--pen);
 }
 
-.projectPage-search input::placeholder {
-    color: var(--muted);
+.subpage-body {
+  padding-block: 3rem 6rem;
 }
 
-.project-container {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.4rem;
-}
-
-@media (max-width: 860px) {
-    .project-container {
-        grid-template-columns: 1fr;
-    }
+.subpage-empty {
+  color: var(--graphite);
+  padding-top: 1.5rem;
+  border-top: 1.5px solid var(--ink);
 }

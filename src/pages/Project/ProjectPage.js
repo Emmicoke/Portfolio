@@ -1,63 +1,74 @@
-import React, { useState } from 'react'
-import { Helmet } from 'react-helmet'
-import { Link } from 'react-router-dom'
-import { AiOutlineHome } from "react-icons/ai";
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
-import './ProjectPage.css'
-import { SingleProject } from '../../components';
-import { projectsData } from '../../data/projectsData'
-import { headerData } from '../../data/headerData'
+import './ProjectPage.css';
+import { SingleProject, Footer } from '../../components';
+import Preferences from '../../components/Preferences/Preferences';
+import { usePrefs } from '../../i18n/Preferences';
+import { projectsData } from '../../data/projectsData';
+import { headerData } from '../../data/headerData';
 
 function ProjectPage() {
-    const [search, setSearch] = useState('')
+    const { t, pick } = usePrefs();
+    const [search, setSearch] = useState('');
 
-    const filteredArticles = projectsData.filter((project) => {
-        const content = project.projectName + project.projectDesc + project.tags
-        return content.toLowerCase().includes(search.toLowerCase())
-    })
+    const localized = projectsData.map((item) => pick(item, ['projects', item.id]));
+    const filtered = localized.filter((project) => {
+        const content = project.projectName + project.projectDesc + project.tags;
+        return content.toLowerCase().includes(search.toLowerCase());
+    });
 
     return (
-        <div className="projectPage">
+        <div className="subpage">
             <Helmet>
-                <title>{headerData.name} | Projects</title>
+                <title>{`${headerData.name} | ${t('page.projects')}`}</title>
             </Helmet>
-            <div className="projectPage-header">
-                <div className="wrap projectPage-header-inner">
-                    <Link to="/" className="projectPage-home" aria-label="Home">
-                        <AiOutlineHome />
+
+            <header className="wrap subpage-head">
+                <div className="subpage-bar">
+                    <Link to="/" className="pen-link">
+                        {t('page.home', { name: headerData.name })}
                     </Link>
-                    <div>
-                        <p className="kicker">Archive</p>
-                        <h1>Projects</h1>
-                    </div>
+                    <Preferences />
                 </div>
-            </div>
-            <div className="wrap projectPage-container">
-                <div className="projectPage-search">
+                <h1 className="subpage-title">{t('page.projects')}</h1>
+                <label className="subpage-search">
+                    <span className="visually-hidden">{t('page.searchProjects')}</span>
                     <input
-                        type="text"
+                        type="search"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        placeholder="Search project..."
+                        placeholder={t('page.searchProjects')}
                     />
-                </div>
-                <div className="project-container">
-                    {filteredArticles.map(project => (
-                        <SingleProject
-                            key={project.id}
-                            id={project.id}
-                            name={project.projectName}
-                            desc={project.projectDesc}
-                            tags={project.tags}
-                            code={project.code}
-                            demo={project.demo}
-                            image={project.image}
-                        />
-                    ))}
-                </div>
-            </div>
+                </label>
+            </header>
+
+            <main className="wrap subpage-body">
+                {filtered.length > 0 ? (
+                    <ul className="project-list">
+                        {filtered.map((project) => (
+                            <SingleProject
+                                key={project.id}
+                                id={project.id}
+                                name={project.projectName}
+                                desc={project.projectDesc}
+                                tags={project.tags}
+                                code={project.code}
+                                demo={project.demo}
+                                image={project.image}
+                            />
+                        ))}
+                    </ul>
+                ) : (
+                    <p className="subpage-empty">
+                        {t('page.noProject', { q: search })}
+                    </p>
+                )}
+            </main>
+            <Footer />
         </div>
-    )
+    );
 }
 
-export default ProjectPage
+export default ProjectPage;

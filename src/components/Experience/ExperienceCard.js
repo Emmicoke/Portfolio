@@ -1,22 +1,23 @@
 import React from 'react';
 
-import './Experience.css'
+import '../Education/Education.css';
+import { shortMonth } from '../../i18n/content';
 
-function ExperienceCard({id, company, jobtitle, startYear, startMonth, endMonth, endYear}) {
+function ExperienceCard({ id, company, jobtitle, startYear, startMonth, endMonth, endYear, note, lang }) {
+    const from = shortMonth(startMonth, lang);
+    const to = shortMonth(endMonth, lang);
     return (
-        <article key={id} className="experience-card">
-            <p className="experience-years">{startMonth} {startYear} — {endMonth} {endYear}</p>
-            <div className="experience-details">
+        <li key={id} className="timeline-row">
+            <p className="timeline-when">
+                {startYear === endYear ? `${from}–${to} ${endYear}` : `${from} ${startYear}–${to} ${endYear}`}
+            </p>
+            <div className="timeline-what">
                 <h3>{jobtitle}</h3>
-                <h4>{company}</h4>
-                <p>
-                    This internship was part of the Erasmus+ Internship Mobility Program and took place at South Tours, a tourism and travel
-                    agency based in Spain. The internship focused on web development and software engineering tasks, specifically contributing to the maintenance, development,
-                    and enhancement of a web-based tour management system used by the company.
-                </p>
+                <p>{company}</p>
+                {note && <p className="timeline-note">{note}</p>}
             </div>
-        </article>
-    )
+        </li>
+    );
 }
 
-export default ExperienceCard
+export default ExperienceCard;

@@ -1,106 +1,135 @@
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    height: 76px;
-    display: flex;
-    align-items: center;
-    background: rgba(20, 18, 16, 0.72);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid transparent;
+.topbar {
+  position: relative;
+  z-index: 20;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
 }
 
-.navbar--scrolled {
-    border-bottom-color: var(--line);
+.topbar-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  min-height: 4rem;
 }
 
-.navbar--container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
+.topbar-name {
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-.navbar--brand {
-    font-family: var(--display);
-    font-size: 1.45rem;
-    letter-spacing: -0.02em;
-    white-space: nowrap;
+.topbar-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-inline: auto;
 }
 
-.navbar--brand span {
-    color: var(--muted);
-    margin-left: 0.4rem;
+.topbar-nav a {
+  color: var(--graphite);
+  transition: color 0.15s ease;
 }
 
-.navbar--links {
-    display: flex;
-    align-items: center;
-    gap: 1.35rem;
+.topbar-nav a:hover {
+  color: var(--pen);
 }
 
-.navbar--links a {
-    font-size: 0.92rem;
-    color: var(--ink-soft);
-    transition: color 0.2s ease;
+.topbar-aside {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  white-space: nowrap;
 }
 
-.navbar--links a:hover {
-    color: var(--ink);
+.topbar-time {
+  color: var(--graphite);
+  font-variant-numeric: tabular-nums;
 }
 
-.navbar--cv {
-    padding: 0.35rem 0.8rem;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    color: var(--ink) !important;
+.topbar-menu {
+  border: 0;
+  padding: 0.25rem 0;
+  background: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.25em;
 }
 
-.navbar--toggle {
+.topbar-menu:hover {
+  color: var(--pen);
+  text-decoration-color: currentColor;
+}
+
+.topbar-menu {
+  display: none;
+}
+
+@media (max-width: 1240px) {
+  .topbar-time {
     display: none;
-    background: none;
-    border: 0;
-    color: var(--ink);
-    font-size: 1.8rem;
-    cursor: pointer;
+  }
 }
 
-@media (max-width: 980px) {
-    .navbar--toggle {
-        display: inline-flex;
-    }
+@media (max-width: 1060px) and (min-width: 861px) {
+  .topbar-nav {
+    gap: 1rem;
+  }
 
-    .navbar--links {
-        display: none;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 0.75rem 1.25rem 1.25rem;
-        background: #171512;
-        border-bottom: 1px solid var(--line);
-    }
+  .topbar-name {
+    max-width: 9rem;
+    white-space: normal;
+    line-height: 1.2;
+  }
+}
 
-    .navbar--links.is-open {
-        display: flex;
-    }
+@media (max-width: 860px) {
+  .topbar-row {
+    flex-wrap: wrap;
+    gap: 0 1.25rem;
+  }
 
-    .navbar--links a {
-        width: 100%;
-        padding: 0.75rem 0;
-        border-bottom: 1px solid var(--line);
-    }
+  .topbar-menu {
+    display: block;
+    margin-left: auto;
+    order: 2;
+  }
 
-    .navbar--cv {
-        margin-top: 0.75rem;
-        width: auto;
-        border-bottom: 1px solid var(--line) !important;
-    }
+  .topbar-aside {
+    order: 1;
+  }
 
-    .navbar--brand span {
-        display: none;
-    }
+  .topbar-name {
+    order: 0;
+  }
+
+  .topbar-nav {
+    order: 3;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 0.75rem;
+  }
+
+  .topbar-nav.is-open {
+    display: flex;
+  }
+
+  .topbar-nav a {
+    padding: 0.7rem 0;
+    border-top: 1px solid var(--rule);
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+}
+
+@media (max-width: 860px) {
+  .topbar-name {
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .topbar-aside {
+    min-height: 3.25rem;
+  }
 }

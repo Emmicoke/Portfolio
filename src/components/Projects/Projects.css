@@ -1,24 +1,4 @@
-.projects--viewAll {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--ink-soft);
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.projects--viewAll:hover {
-    color: var(--ink);
-}
-
-.projects--bodyContainer {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.4rem;
-}
-
-@media (max-width: 860px) {
-    .projects--bodyContainer {
-        grid-template-columns: 1fr;
-    }
+.projects-more {
+  display: inline-block;
+  margin-top: 1.75rem;
 }

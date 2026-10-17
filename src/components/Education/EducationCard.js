@@ -1,18 +1,24 @@
 import React from 'react';
 
-import './Education.css'
+import './Education.css';
+import { contentTr } from '../../i18n/content';
 
-function EducationCard({ id, institution, degree, course, startYear, endYear }) {
+function EducationCard({ id, institution, degree, course, startYear, endYear, lang }) {
+    const current = String(endYear).toLowerCase() === 'present';
+    const end = current && lang === 'tr' ? contentTr.present : endYear;
     return (
-        <article key={id} className="education-card">
-            <p className="education-years">{startYear} — {endYear}</p>
-            <div className="education-details">
-                <h3>{degree}</h3>
-                <h4>{course}</h4>
-                <p>{institution}</p>
+        <li key={id} className={`timeline-row${current ? ' is-current' : ''}`}>
+            <p className="timeline-when">
+                {startYear}–{end}
+            </p>
+            <div className="timeline-what">
+                <h3>{institution}</h3>
+                <p>
+                    {degree}, {course}
+                </p>
             </div>
-        </article>
-    )
+        </li>
+    );
 }
 
-export default EducationCard
+export default EducationCard;

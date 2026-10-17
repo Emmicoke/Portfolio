@@ -1,37 +1,39 @@
 import React from 'react';
 
-import './Education.css'
+import './Education.css';
 import EducationCard from './EducationCard';
-
-import { educationData } from '../../data/educationData'
+import { usePrefs } from '../../i18n/Preferences';
+import { educationData } from '../../data/educationData';
 
 function Education() {
-    return (
-        <section className="education section" id="education">
-            <div className="wrap">
-                <div className="section-head">
-                    <div>
-                        <p className="kicker">Studies</p>
-                        <h2>Education</h2>
-                    </div>
-                </div>
+    const { t, pick, lang } = usePrefs();
+    // newest first reads more naturally on a CV
+    const items = [...educationData].sort((a, b) => Number(b.startYear) - Number(a.startYear));
 
-                <div className="education-list">
-                    {educationData.map(edu => (
-                        <EducationCard
-                            key={edu.id}
-                            id={edu.id}
-                            institution={edu.institution}
-                            degree={edu.degree}
-                            course={edu.course}
-                            startYear={edu.startYear}
-                            endYear={edu.endYear}
-                        />
-                    ))}
-                </div>
+    return (
+        <section className="block education" id="education">
+            <div className="wrap split">
+                <h2 className="heading">{t('education.title')}</h2>
+                <ol className="timeline">
+                    {items.map((item) => {
+                        const edu = pick(item, ['education', item.id]);
+                        return (
+                            <EducationCard
+                                key={edu.id}
+                                id={edu.id}
+                                institution={edu.institution}
+                                degree={edu.degree}
+                                course={edu.course}
+                                startYear={edu.startYear}
+                                endYear={edu.endYear}
+                                lang={lang}
+                            />
+                        );
+                    })}
+                </ol>
             </div>
         </section>
-    )
+    );
 }
 
-export default Education
+export default Education;

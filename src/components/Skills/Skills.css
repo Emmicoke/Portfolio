@@ -1,42 +1,39 @@
-.skills,
-.experience,
-.contacts {
-    background: #171412;
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em 0;
+  font-stretch: var(--semi);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4.4vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
-.skills-grid {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1rem;
+.skills-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28em;
 }
 
-.skill--box {
-    background: var(--bg-raised);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 1.25rem 0.75rem 1.1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+.skills-list li:not(:last-child)::after {
+  content: '/';
+  margin: 0 0.4em 0 0.3em;
+  font-weight: 300;
+  color: var(--rule);
 }
 
-.skill--box:hover {
-    border-color: #4a4036;
-    transform: translateY(-3px);
+.skills-list img {
+  width: 0.62em;
+  height: 0.62em;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.75;
+  transition: filter 0.2s ease, opacity 0.2s ease;
 }
 
-.skill--box img {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
-}
-
-.skill--box h3 {
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--ink-soft);
+.skills-list li:hover img {
+  filter: none;
+  opacity: 1;
 }

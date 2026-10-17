@@ -1,50 +1,57 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
-import { HiArrowRight } from "react-icons/hi";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { projectsData } from '../../data/projectsData'
-
-import './Projects.css'
+import './Projects.css';
 import SingleProject from './SingleProject/SingleProject';
+import { usePrefs } from '../../i18n/Preferences';
+import { projectsData } from '../../data/projectsData';
+
+const SHOWN = 4;
 
 function Projects() {
-    return (
-        <>
-            {projectsData.length > 0 && (
-                <section className="projects section" id="projects">
-                    <div className="wrap">
-                        <div className="section-head">
-                            <div>
-                                <p className="kicker">Selected work</p>
-                                <h2>Projects</h2>
-                            </div>
-                            {projectsData.length > 3 && (
-                                <Link to="/projects" className="projects--viewAll">
-                                    View all
-                                    <HiArrowRight />
-                                </Link>
-                            )}
-                        </div>
+    const { t, pick } = usePrefs();
+    const [openId, setOpenId] = useState(projectsData[0] && projectsData[0].id);
 
-                        <div className="projects--bodyContainer">
-                            {projectsData.slice(0, 4).map(project => (
-                                <SingleProject
-                                    key={project.id}
-                                    id={project.id}
-                                    name={project.projectName}
-                                    desc={project.projectDesc}
-                                    tags={project.tags}
-                                    code={project.code}
-                                    demo={project.demo}
-                                    image={project.image}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-        </>
-    )
+    if (!projectsData.length) return null;
+
+    return (
+        <section className="block projects" id="projects">
+            <div className="wrap split">
+                <h2 className="heading">
+                    {t('projects.title')}
+                    <small>{t('projects.note')}</small>
+                </h2>
+
+                <div>
+                    <ul className="project-list">
+                        {projectsData.slice(0, SHOWN).map((item) => {
+                            const project = pick(item, ['projects', item.id]);
+                            return (
+                            <SingleProject
+                                key={project.id}
+                                id={project.id}
+                                name={project.projectName}
+                                desc={project.projectDesc}
+                                tags={project.tags}
+                                code={project.code}
+                                demo={project.demo}
+                                image={project.image}
+                                open={openId === project.id}
+                                onToggle={() => setOpenId(openId === project.id ? null : project.id)}
+                            />
+                            );
+                        })}
+                    </ul>
+
+                    {projectsData.length > SHOWN && (
+                        <Link to="/projects" className="pen-link projects-more">
+                            {t('projects.all', { n: projectsData.length })}
+                        </Link>
+                    )}
+                </div>
+            </div>
+        </section>
+    );
 }
 
-export default Projects
+export default Projects;

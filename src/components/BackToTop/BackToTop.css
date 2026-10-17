@@ -1,24 +1,27 @@
 .backToTop {
-    position: fixed;
-    right: 1.25rem;
-    bottom: 1.25rem;
-    z-index: 40;
+  position: fixed;
+  right: var(--gutter);
+  bottom: 1.25rem;
+  z-index: 30;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  background: var(--paper);
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-.backToTop button {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--line);
-    background: var(--bg-raised);
-    color: var(--ink);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
+.backToTop.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
 }
 
-.backToTop button:hover {
-    border-color: var(--accent);
+.backToTop:hover {
+  color: var(--pen);
+  border-color: var(--pen);
 }

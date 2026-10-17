@@ -1,40 +1,26 @@
-import React,{useContext} from 'react';
+import React from 'react';
 
-import { ThemeContext } from '../../contexts/ThemeContext';
-
+import './Services.css';
+import SingleService from './SingleService/SingleService';
+import { usePrefs } from '../../i18n/Preferences';
 import { servicesData } from '../../data/servicesData';
 
-import './Services.css'
-import SingleService from './SingleService/SingleService';
-
 function Services() {
+    const { t } = usePrefs();
+    if (!servicesData.length) return null;
 
-    const { theme } = useContext(ThemeContext);
     return (
-        <>
-            {servicesData.length > 0 && (
-                <div className="services" id="services" style={{backgroundColor:theme.secondary}}>
-                    <div className="services-header">
-                        <h1 style={{color: theme.primary}}>Services</h1>
-                    </div>
-                    <div className="services-body">
-                        <p style={{color:theme.tertiary80}}>
-                            These are some of the services I offer. Reach out to me if I can help you with any!
-                        </p>
-                        <div className="services-bodycontainer">
-                            {servicesData.map(services => (
-                                <SingleService
-                                key={services.id}
-                                id={services.id}
-                                title={services.title}
-                                icon={services.icon}/>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            )}
-       </>
-    )
+        <section className="block services" id="services">
+            <div className="wrap split">
+                <h2 className="heading">{t('services.title')}</h2>
+                <ul className="service-list">
+                    {servicesData.map((service) => (
+                        <SingleService key={service.id} id={service.id} title={service.title} icon={service.icon} />
+                    ))}
+                </ul>
+            </div>
+        </section>
+    );
 }
 
-export default Services
+export default Services;

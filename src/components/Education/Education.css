@@ -1,46 +1,51 @@
-.education-list {
-    display: grid;
-    gap: 0;
-    border-top: 1px solid var(--line);
+/* Shared by Education and Experience */
+.timeline {
+  list-style: none;
+  padding: 0;
+  border-top: 1.5px solid var(--ink);
 }
 
-.education-card {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 1.5rem;
-    padding: 1.6rem 0;
-    border-bottom: 1px solid var(--line);
+.timeline-row {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 1rem 2rem;
+  padding: 1.5rem 0 1.6rem;
+  border-bottom: 1px solid var(--rule);
 }
 
-.education-years {
-    color: var(--accent);
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding-top: 0.25rem;
+.timeline-when {
+  color: var(--graphite);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.2rem;
 }
 
-.education-details h3 {
-    font-family: var(--display);
-    font-size: 1.7rem;
-    font-weight: 400;
-    line-height: 1.2;
+.timeline-row.is-current .timeline-when {
+  color: var(--pen);
+  font-weight: 600;
 }
 
-.education-details h4 {
-    margin-top: 0.35rem;
-    color: var(--ink-soft);
-    font-size: 1.02rem;
-    font-weight: 500;
+.timeline-what h3 {
+  font-stretch: var(--semi);
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
 }
 
-.education-details p {
-    margin-top: 0.35rem;
-    color: var(--muted);
+.timeline-what p {
+  margin-top: 0.3rem;
+  color: var(--graphite);
 }
 
-@media (max-width: 700px) {
-    .education-card {
-        grid-template-columns: 1fr;
-        gap: 0.4rem;
-    }
+.timeline-what .timeline-note {
+  margin-top: 0.9rem;
+  color: var(--ink);
+  max-width: 64ch;
+}
+
+@media (max-width: 560px) {
+  .timeline-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
 }

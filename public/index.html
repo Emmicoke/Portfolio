@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#141210" />
+    <meta name="theme-color" content="#eceee9" />
     <meta name="description" content="Fahrettin Emin Korkut — Software Engineer. Portfolio of web, mobile, and image processing work." />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -13,6 +13,17 @@
     <meta property="og:title" content="Fahrettin Emin Korkut — Software Engineer"/>
     <meta property="og:type" content="website"/>
     <meta property="og:description" content="Portfolio of web, mobile, and image processing work."/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet" />
+
+    <script>
+      try {
+        var m = localStorage.getItem('fek-mode');
+        if (m === 'dark' || m === 'light') document.documentElement.setAttribute('data-mode', m);
+      } catch (e) {}
+    </script>
 
     <title>Fahrettin Emin Korkut</title>
   </head>

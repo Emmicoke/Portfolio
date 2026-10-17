@@ -1,23 +1,21 @@
 import React from 'react';
 
-import './Achievement.css'
+import './Achievement.css';
 
-function AchievementCard({id, title, details, date, field, image}) {
+function AchievementCard({ id, title, details, date, field, image, onOpen, enlargeLabel }) {
     return (
-        <article key={id} className="achievement-card">
-            <div className="achievecard-imgcontainer">
-                <img src={image} alt={title} />
-            </div>
-            <div className="achievecard-content">
-                <p className="achievecard-meta">
-                    <span>{date}</span>
-                    <span>{field}</span>
-                </p>
-                <h3>{title}</h3>
-                <p>{details}</p>
-            </div>
-        </article>
-    )
+        <li key={id} className="certificate">
+            <button className="certificate-thumb" onClick={onOpen} aria-label={enlargeLabel}>
+                <img src={image} alt="" loading="lazy" />
+            </button>
+            <h3>{title}</h3>
+            <p>{details}</p>
+            <p className="certificate-date">
+                {date}
+                <span>{field}</span>
+            </p>
+        </li>
+    );
 }
 
-export default AchievementCard
+export default AchievementCard;

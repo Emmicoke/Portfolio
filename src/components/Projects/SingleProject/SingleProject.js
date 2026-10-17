@@ -1,49 +1,53 @@
-import React from 'react';
-import { FaPlay, FaCode } from 'react-icons/fa';
+import React, { useState } from 'react';
 
+import { usePrefs } from '../../../i18n/Preferences';
 import placeholder from '../../../assets/png/placeholder.png';
 import './SingleProject.css';
 
-function SingleProject({ id, name, desc, tags, code, demo, image }) {
+function SingleProject({ id, name, desc, tags, code, demo, image, open, onToggle }) {
+    const { t } = usePrefs();
+    // works controlled (home page) or on its own (projects page)
+    const [selfOpen, setSelfOpen] = useState(false);
+    const isOpen = typeof open === 'boolean' ? open : selfOpen;
+    const toggle = onToggle || (() => setSelfOpen(!selfOpen));
+    const panelId = `project-panel-${id}`;
+
     return (
-        <article key={id} className='singleProject'>
-            <div className='project-media'>
-                <img src={image ? image : placeholder} alt={name} />
-            </div>
-            <div className='project-body'>
-                <div className='project-top'>
-                    <h2 id={name.replace(' ', '-').toLowerCase()}>{name}</h2>
-                    <div className='project--showcaseBtn'>
-                        {demo && (
-                            <a
-                                href={demo}
-                                target='_blank'
-                                rel='noreferrer'
-                                aria-label={`${name} demo`}
-                            >
-                                <FaPlay />
-                            </a>
-                        )}
+        <li className={`project${isOpen ? ' is-open' : ''}`}>
+            <h3>
+                <button className="project-toggle" aria-expanded={isOpen} aria-controls={panelId} onClick={toggle}>
+                    <span className="project-name">{name}</span>
+                    <span className="project-tags">{tags.join(', ')}</span>
+                    <span className="project-sign" aria-hidden="true" />
+                </button>
+            </h3>
+
+            <div className="project-panel" id={panelId} hidden={!isOpen}>
+                <div className="project-media">
+                    <img src={image ? image : placeholder} alt={t('projects.shot', { name })} loading="lazy" />
+                </div>
+                <div className="project-info">
+                    <p>{desc}</p>
+                    <ul className="project-chips">
+                        {tags.map((tag) => (
+                            <li key={tag}>{tag}</li>
+                        ))}
+                    </ul>
+                    <p className="project-links">
                         {code && (
-                            <a
-                                href={code}
-                                target='_blank'
-                                rel='noreferrer'
-                                aria-label={`${name} code`}
-                            >
-                                <FaCode />
+                            <a className="pen-link" href={code} target="_blank" rel="noreferrer">
+                                {t('projects.code')}
                             </a>
                         )}
-                    </div>
-                </div>
-                <p className='project--desc'>{desc}</p>
-                <div className='project--lang'>
-                    {tags.map((tag, tagId) => (
-                        <span key={tagId}>{tag}</span>
-                    ))}
+                        {demo && (
+                            <a className="pen-link" href={demo} target="_blank" rel="noreferrer">
+                                {t('projects.demo')}
+                            </a>
+                        )}
+                    </p>
                 </div>
             </div>
-        </article>
+        </li>
     );
 }
 

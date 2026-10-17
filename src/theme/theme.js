@@ -353,3 +353,25 @@ export const yellowThemeDark = {
     contactsimg: contactsYellow
 }
 
+export const studioTheme = {
+    type: 'dark',
+    primary: '#c45c26',
+    primary400: '#d46b34',
+    primary600: '#a64b1d',
+    primary80: '#c45c26cc',
+    primary50: '#c45c2680',
+    primary30: '#c45c264d',
+    secondary: '#141210',
+    secondary70: '#141210b3',
+    secondary50: '#14121080',
+    tertiary: '#efe8dc',
+    tertiary80: '#efe8dccc',
+    tertiary70: '#efe8dcb3',
+    tertiary50: '#efe8dc80',
+    aboutimg1: orangeThemeboy,
+    aboutimg2: orangeThemegirl,
+    eduimg: eduOrange,
+    expimg: expOrange,
+    contactsimg: contactsOrange
+}
+

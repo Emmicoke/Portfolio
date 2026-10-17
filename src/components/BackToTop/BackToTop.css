@@ -1,24 +1,24 @@
 .backToTop {
-    position: fixed; 
-    right: 10px;
-    bottom: 60px;
-    height: 30px;
-    font-size: 3rem;
-    z-index: 999;
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 40;
 }
 
 .backToTop button {
-    outline: none;
-    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--bg-raised);
+    color: var(--ink);
     cursor: pointer;
-    background: none;
-    padding: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
 }
 
-@media screen and (max-width: 800px) {
-    .backToTop { 
-        right: -10px;
-        bottom: 50px;
-        font-size: 2.75rem;
-    }
+.backToTop button:hover {
+    border-color: var(--accent);
 }

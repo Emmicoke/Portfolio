@@ -1,85 +1,64 @@
 .projectPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     min-height: 100vh;
+    padding-bottom: 4rem;
 }
 
 .projectPage-header {
-    height: 35vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    border-bottom: 1px solid var(--line);
+    padding: 2.5rem 0 2rem;
 }
 
-.projectPage-header > h1 {
-    font-size: 4rem;
-    font-family: var(--primaryFont);
+.projectPage-header-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.projectPage-header h1 {
+    font-family: var(--display);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 400;
+}
+
+.projectPage-home {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.35rem;
 }
 
 .projectPage-container {
-    padding: 3rem 2rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    padding-top: 2rem;
 }
 
-.projectPage-search {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.projectPage-search input {
+    width: min(100%, 420px);
+    height: 48px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--bg-raised);
+    color: var(--ink);
+    padding: 0 1.1rem;
+    outline: none;
+}
+
+.projectPage-search input::placeholder {
+    color: var(--muted);
 }
 
 .project-container {
-    margin-top: 5rem;
-    width: 100%;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.4rem;
 }
 
-.project-grid {
-    display: flex;
-    gap: 4rem; 
-}
-
-@media (min-width: 992px) and (max-width: 1380px) {
-
-}
-
-@media screen and (max-width: 992px) {
-    .projectPage-header {
-        height: 25vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .project-grid {
-        gap: 3rem;
-    }
-}
-
-@media screen and (max-width: 702px) {
-    .project-grid {
-        gap: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .projectPage-header h1 {
-        font-size: 3rem;
-    }
-}
-@media screen and (max-width: 400px) {
-    .projectPage-header {
-        height: 20vh;
-    }
-    .projectPage-header h1 {
-        font-size: 2.5rem;
+@media (max-width: 860px) {
+    .project-container {
+        grid-template-columns: 1fr;
     }
 }

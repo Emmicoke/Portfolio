@@ -1,6 +1,4 @@
-import React,{useContext} from 'react';
-
-import { ThemeContext } from '../../contexts/ThemeContext';
+import React from 'react';
 
 import './Experience.css';
 
@@ -8,18 +6,19 @@ import { experienceData } from '../../data/experienceData'
 import ExperienceCard from './ExperienceCard';
 
 function Experience() {
-
-    const { theme } = useContext(ThemeContext);
     return (
-        <div className="experience" id="experience" style={{backgroundColor: theme.secondary}}> 
-             <div className="experience-body">
-                 <div className="experience-image">
-                     <img src={theme.expimg} alt="" />
-                 </div>
-                 <div className="experience-description">
-                    <h1 style={{color:theme.primary}}>Experience</h1>
-                    {experienceData.map(exp =>(
-                        <ExperienceCard 
+        <section className="experience section" id="experience">
+            <div className="wrap">
+                <div className="section-head">
+                    <div>
+                        <p className="kicker">Work</p>
+                        <h2>Experience</h2>
+                    </div>
+                </div>
+
+                <div className="experience-list">
+                    {experienceData.map(exp => (
+                        <ExperienceCard
                             key={exp.id}
                             id={exp.id}
                             jobtitle={exp.jobtitle}
@@ -27,11 +26,12 @@ function Experience() {
                             startMonth={exp.startMonth}
                             endMonth={exp.endMonth}
                             startYear={exp.startYear}
-                            endYear={exp.endYear}/>
+                            endYear={exp.endYear}
+                        />
                     ))}
-                 </div>
-             </div>
-        </div>
+                </div>
+            </div>
+        </section>
     )
 }
 

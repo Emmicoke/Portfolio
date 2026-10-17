@@ -1,60 +1,34 @@
-import React,{ useContext} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles';
-
-import { ThemeContext } from '../../contexts/ThemeContext';
-import { projectsData } from '../../data/projectsData'
 import { HiArrowRight } from "react-icons/hi";
+
+import { projectsData } from '../../data/projectsData'
 
 import './Projects.css'
 import SingleProject from './SingleProject/SingleProject';
 
 function Projects() {
-
-    const { theme } = useContext(ThemeContext);
-
-    
-    const useStyles = makeStyles(() => ({
-        viewAllBtn : {
-            color: theme.tertiary, 
-            backgroundColor: theme.primary,
-            transition: 'color 0.2s',
-            "&:hover": {
-                color: theme.secondary, 
-                backgroundColor: theme.primary,
-            }
-        },
-        viewArr : {
-            color: theme.tertiary, 
-            backgroundColor: theme.secondary70,
-            width: '40px',
-            height: '40px',
-            padding: '0.5rem',
-            fontSize: '1.05rem',
-            borderRadius: '50%',
-            cursor: 'pointer',
-            transition: 'background-color 0.2s',
-            "&:hover": {
-                color: theme.tertiary, 
-                backgroundColor: theme.secondary,
-            }
-        },
-    }));
-
-    const classes = useStyles();
-
     return (
         <>
             {projectsData.length > 0 && (
-                <div className="projects" id="projects" style={{backgroundColor: theme.secondary}}>
-                    <div className="projects--header">
-                        <h1 style={{color: theme.primary}}>Projects</h1>
-                    </div>
-                    <div className="projects--body">
+                <section className="projects section" id="projects">
+                    <div className="wrap">
+                        <div className="section-head">
+                            <div>
+                                <p className="kicker">Selected work</p>
+                                <h2>Projects</h2>
+                            </div>
+                            {projectsData.length > 3 && (
+                                <Link to="/projects" className="projects--viewAll">
+                                    View all
+                                    <HiArrowRight />
+                                </Link>
+                            )}
+                        </div>
+
                         <div className="projects--bodyContainer">
                             {projectsData.slice(0, 4).map(project => (
                                 <SingleProject
-                                    theme={theme}
                                     key={project.id}
                                     id={project.id}
                                     name={project.projectName}
@@ -65,22 +39,10 @@ function Projects() {
                                     image={project.image}
                                 />
                             ))}
-                        </div> 
-
-                        {projectsData.length > 3 && (
-                            <div className="projects--viewAll">
-                                <Link to="/projects">
-                                    <button className={classes.viewAllBtn}>
-                                        View All
-                                        <HiArrowRight className={classes.viewArr} />
-                                    </button>
-                                </Link>
-                            </div>
-                        )}
+                        </div>
                     </div>
-                </div>
+                </section>
             )}
-
         </>
     )
 }

@@ -1,6 +1,4 @@
-import React, { useContext } from 'react';
-
-import { ThemeContext } from '../../contexts/ThemeContext';
+import React from 'react';
 
 import './Education.css'
 import EducationCard from './EducationCard';
@@ -8,16 +6,19 @@ import EducationCard from './EducationCard';
 import { educationData } from '../../data/educationData'
 
 function Education() {
-
-    const { theme } = useContext(ThemeContext);
     return (
-        <div className="education" id="education" style={{backgroundColor: theme.secondary}}>
-           
-            <div className="education-body">
-                <div className="education-description">
-                <h1 style={{color:theme.primary}}>Education</h1>
+        <section className="education section" id="education">
+            <div className="wrap">
+                <div className="section-head">
+                    <div>
+                        <p className="kicker">Studies</p>
+                        <h2>Education</h2>
+                    </div>
+                </div>
+
+                <div className="education-list">
                     {educationData.map(edu => (
-                        <EducationCard 
+                        <EducationCard
                             key={edu.id}
                             id={edu.id}
                             institution={edu.institution}
@@ -28,11 +29,8 @@ function Education() {
                         />
                     ))}
                 </div>
-                <div className="education-image">
-                    <img src={theme.eduimg} alt=""/>
-                </div>
             </div>
-        </div>
+        </section>
     )
 }
 

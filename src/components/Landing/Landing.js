@@ -13,6 +13,7 @@ function Landing() {
     const words = headerData.name.split(' ');
     const last = words.pop();
     const place = contactsData.address.replace('/', ', ');
+    const resume = headerData.resumePdf && (headerData.resumePdf[lang] || headerData.resumePdf.en);
     const title = lang === 'tr' ? header.title.toLocaleLowerCase('tr-TR') : header.title;
 
     return (
@@ -29,11 +30,11 @@ function Landing() {
                         <blockquote className="hero-quote">{header.desciption}</blockquote>
 
                         <div className="hero-actions">
-                            {headerData.resumePdf && (
+                            {resume && (
                                 <a
                                     className="button"
-                                    href={headerData.resumePdf}
-                                    download="KORKUTFahrettinEminCV"
+                                    href={resume}
+                                    download={`FahrettinEminKORKUT-CV-${lang.toUpperCase()}.pdf`}
                                     target="_blank"
                                     rel="noreferrer"
                                 >

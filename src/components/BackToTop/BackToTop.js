@@ -8,10 +8,20 @@ function BackToTop() {
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
-        const onScroll = () => setVisible(window.scrollY > window.innerHeight * 1.2);
+        const onScroll = () => {
+            // the footer carries its own "back to top" link, so the floating
+            // button steps aside as soon as the footer comes into view
+            const footer = document.querySelector('.footer');
+            const footerInView = footer && footer.getBoundingClientRect().top < window.innerHeight;
+            setVisible(window.scrollY > window.innerHeight * 1.2 && !footerInView);
+        };
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
+        window.addEventListener('resize', onScroll);
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onScroll);
+        };
     }, []);
 
     return (
